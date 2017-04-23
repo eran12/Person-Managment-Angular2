@@ -1,0 +1,97 @@
+ <div class="row">
+  <div class="col-xs-12">
+    <form id="user-form" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-8 form-group">
+          <label for="user-name">Name</label>
+          <input type="text"
+                 id="user-name"
+                 required
+                 class="form-control"
+                 [ngModel]="user?.name"
+                 name="name">
+        </div>
+
+        <div class="col-sm-8 form-group">
+          <label for="user-address">Address</label>
+          <input type="text"
+                 id="user-address"
+                 required
+                 class="form-control"
+                 [ngModel]="user?.address"
+                 name="address">
+        </div>
+        
+        <div class="col-sm-8 form-group">
+          <label for="user-phone">Phone</label>
+          <input type="tel"
+                 id="user-phone"
+                 required
+                 class="form-control"
+                 [ngModel]="user?.phone"
+                 name="phone"
+                 pattern="\d+">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- 
+<div class="row">
+	<div class="col-xs-12">
+		<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+			<div class="row">
+			<div class="col-xs-12">
+				<button type="submit" class="btn btn-success" [disabled]="!userForm.valid">Save</button>
+				<button type="button" class="btn btn-danger" (click)="OnCancel()">Cancel</button>
+			</div>
+			</div>
+			 <div class="row">
+		        <div class="col-xs-12">
+		          <div class="form-group">
+		            <label for="name">Name</label>
+		            <input
+		              type="text"
+		              id="name"
+		              class="form-control"
+		              formControlName="name"
+		              >
+		          </div>
+		        </div>
+		      </div>
+			 <div class="row">
+		        <div class="col-xs-12">
+		          <div class="form-group">
+		            <label for="adress">Adress</label>
+		            <input
+		              type="text"
+		              id="adress"
+		              class="form-control"
+		              formControlName="adress">
+		          </div>
+		        </div>
+		      </div>
+			 <div class="row">
+		        <div class="col-xs-12">
+		          <div class="form-group">
+		            <label for="phone">Phone</label>
+		            <input
+		              type="tel"
+		              id="phone"
+		              class="form-control"
+		              formControlName="phone">
+		          </div>
+        		</div>
+     		</div>
+		</form>
+	</div>
+</div>
+ -->
